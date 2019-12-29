@@ -16,7 +16,7 @@ def get_firebase(Time):
 	
 def get_status(trainNo,src,dst):
 	try:
-		res=requests.get('https://travel.paytm.com/api/trains/v1/detail?class=SL&departureDate='+time.strftime('%Y%m28')+'&destination='+dst+'&quota=GN&requestid=81635f2a-1e74-4c88-976f-f2e469d513d8&source='+src+'&trainNumber='+str(trainNo)+'&train_type=O&client=%27mweb%27').json()	
+		res=requests.get('https://travel.paytm.com/api/trains/v1/detail?class=SL&departureDate='+time.strftime('%Y%m%d')+'&destination='+dst+'&quota=GN&requestid=81635f2a-1e74-4c88-976f-f2e469d513d8&source='+src+'&trainNumber='+str(trainNo)+'&train_type=O&client=%27mweb%27').json()	
 		#print(res)
 		return res['body']['availability'][0]['status']
 	except Exception:
